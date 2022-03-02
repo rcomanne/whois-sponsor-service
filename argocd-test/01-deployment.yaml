@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: argocd-test
+  labels:
+    app: argocd-test
+spec:
+  replicas: 1
+  template:
+    metadata:
+      name: argocd-test
+      labels:
+        app: argocd-test
+    spec:
+      containers:
+        - name: argocd-test
+          image: nginx:stable-nonroot
+          imagePullPolicy: IfNotPresent
+          ports:
+            - containerPort: 80
+              name: http
+      restartPolicy: Always
+  selector:
+    matchLabels:
+      app: argocd-test
