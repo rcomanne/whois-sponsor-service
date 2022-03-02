@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: argocd-test
-          image: nginx:stable-nonroot
+          image: nginxinc/nginx-unprivileged:stable-alpine
           imagePullPolicy: IfNotPresent
           ports:
             - containerPort: 80
