@@ -1,0 +1,12 @@
+---
+spring:
+  sql:
+    init:
+      platform: postgres
+  jpa:
+    hibernate:
+      ddl-auto: update
+
+springdoc:
+  default-consumes-media-type: "application/json"
+  default-produces-media-type: "application/json"

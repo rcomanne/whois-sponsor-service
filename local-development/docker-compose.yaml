@@ -1,0 +1,20 @@
+version: "3"
+services:
+  postgres:
+    image: postgres:alpine
+    environment:
+      - POSTGRES_USER=sbapp
+      - POSTGRES_PASSWORD=sbapp
+    ports:
+      - "5432:5432"
+
+  pgadmin:
+    image: dpage/pgadmin4
+    environment:
+      - PGADMIN_DEFAULT_EMAIL=mail@mail.com
+      - PGADMIN_DEFAULT_PASSWORD=password
+      - PGADMIN_LISTEN_PORT=8080
+    ports:
+      - "8090:8080"
+    volumes:
+      - "${PWD}/servers.json:/pgadmin4/servers.json"

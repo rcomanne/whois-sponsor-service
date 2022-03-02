@@ -1,0 +1,15 @@
+---
+spring:
+  datasource:
+    username: sbapp
+    password: sbapp
+    url: jdbc:postgresql://localhost:5432/sbapp
+  sql.init.platform: postgres
+  jpa:
+    hibernate:
+      ddl-auto: create-drop
+    show-sql: true
+
+logging:
+  level:
+    nl.rcomanne: DEBUG
